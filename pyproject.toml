@@ -1,7 +1,7 @@
 [project]
-name = "oop4"
+name = "oop5"
 version = "0.1.0"
-description = "oop3"
+description = "oop5"
 readme = "README.md"
 requires-python = ">=3.13.3"
 dependencies = [
@@ -30,7 +30,7 @@ python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
 addopts = "-v --import-mode=append"
-pythonpath = [".","tasks","examples"]
+pythonpath = [".", "tasks/project", "tasks", "examples"]
 
 [tool.mypy]
 python_version = "3.14"

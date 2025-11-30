@@ -1,6 +1,7 @@
 {
     "python.analysis.extraPaths": [
-        "./tasks"
+        "./tasks",
+        "./tasks/project"
     ],
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.copyOnSelection": true,
