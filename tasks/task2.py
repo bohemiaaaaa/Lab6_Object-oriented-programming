@@ -2,21 +2,28 @@
 # -*- coding: utf-8 -*-
 
 import random
+from typing import List
 
-try:
-    rows = int(input("Введите количество строк: "))
-    cols = int(input("Введите количество столбцов: "))
 
-    matrix = []
-    for i in range(rows):
-        row = []
-        for j in range(cols):
-            row.append(random.randint(1, 100))
-        matrix.append(row)
+def main() -> None:
+    try:
+        rows: int = int(input("Введите количество строк: "))
+        cols: int = int(input("Введите количество столбцов: "))
 
-    print("Сгенерированная матрица:")
-    for row in matrix:
-        print(row)
+        matrix: List[List[int]] = []
+        for i in range(rows):
+            row: List[int] = []
+            for j in range(cols):
+                row.append(random.randint(1, 100))
+            matrix.append(row)
 
-except ValueError:
-    print("Ошибка: введите целые числа для строк и столбцов!")
+        print("Сгенерированная матрица:")
+        for row in matrix:
+            print(row)
+
+    except ValueError:
+        print("Ошибка: введите целые числа для строк и столбцов!")
+
+
+if __name__ == "__main__":
+    main()
