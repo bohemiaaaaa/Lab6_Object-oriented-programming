@@ -16,5 +16,11 @@ python tasks/task1.py
 # Запуск задания 2
 python tasks/task2.py
 
+# Запуск задания 3
+python tasks/task3.py
+
+# Запуск задания 4
+python tasks/project/main.py
+
 # Запуск тестов
 pytest
