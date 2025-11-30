@@ -8,7 +8,6 @@ from exceptions import DataFormatError, InvalidPhoneError, UnknownCommandError
 from models import PhoneBook
 from storage import load_phonebook, save_phonebook
 
-# Создать папку для логов если её нет
 os.makedirs("tasks/project", exist_ok=True)
 
 logging.basicConfig(
@@ -21,7 +20,6 @@ logging.basicConfig(
 def main() -> None:
     phonebook: PhoneBook = PhoneBook()
 
-    # Автоматическая загрузка данных при запуске
     try:
         phonebook = load_phonebook("tasks/project/data.xml")
         print("Данные загружены автоматически")
