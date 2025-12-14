@@ -2,19 +2,32 @@
 # -*- coding: utf-8 -*-
 
 
+class UsernameAlreadyExistsError(Exception):
+    def __init__(self, username: str, message: str = "имя уже занято") -> None:
+        self.username: str = username
+        self.message: str = message
+        super(UsernameAlreadyExistsError, self).__init__(message)
+
+    def __str__(self) -> str:
+        return f"UsernameAlreadyExistsError: '{self.username}' -> {self.message}"
+
+
+# Список занятых имен
+existing_usernames: list[str] = ["Егор", "админ", "администратор", "admin"]
+
+
 def main() -> None:
     try:
-        first: str = input("Первое значение: ")
-        second: str = input("Второе значение: ")
+        new_username: str = input("Введите новое имя пользователя: ")
 
-        first_num: float = float(first)
-        second_num: float = float(second)
+        if new_username in existing_usernames:
+            raise UsernameAlreadyExistsError(new_username)
+        else:
+            existing_usernames.append(new_username)
+            print(f"Имя пользователя '{new_username}' успешно зарегистрировано!")
 
-        result: float = first_num + second_num
-        print(f"Результат: {result}")
-    except ValueError:
-        result: str = first + second
-        print(f"Результат: {result}")
+    except UsernameAlreadyExistsError as e:
+        print(e)
 
 
 if __name__ == "__main__":

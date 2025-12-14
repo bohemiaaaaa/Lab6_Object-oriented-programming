@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from task1 import main as addition_main
+from concatenation import main as addition_main
 
 
 def test_addition_numbers(monkeypatch, capsys):

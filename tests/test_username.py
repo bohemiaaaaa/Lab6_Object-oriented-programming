@@ -3,8 +3,8 @@
 
 
 import pytest
-from task3 import UsernameAlreadyExistsError, existing_usernames
-from task3 import main as username_main
+from task1 import UsernameAlreadyExistsError, existing_usernames
+from task1 import main as username_main
 
 
 def test_username_already_exists():

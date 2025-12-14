@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from task2 import main as matrix_main
+from matrix import main as matrix_main
 
 
 def test_matrix_creation(monkeypatch, capsys):
