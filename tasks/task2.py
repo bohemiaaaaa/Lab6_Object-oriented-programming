@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import random
-from typing import List
 
 
 def main() -> None:
@@ -10,9 +9,9 @@ def main() -> None:
         rows: int = int(input("Введите количество строк: "))
         cols: int = int(input("Введите количество столбцов: "))
 
-        matrix: List[List[int]] = []
+        matrix: list[list[int]] = []
         for i in range(rows):
-            row: List[int] = []
+            row: list[int] = []
             for j in range(cols):
                 row.append(random.randint(1, 100))
             matrix.append(row)

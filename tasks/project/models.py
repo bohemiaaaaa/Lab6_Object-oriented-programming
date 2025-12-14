@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from dataclasses import dataclass, field
-from typing import List
 
 
 @dataclass(frozen=True)
@@ -15,7 +14,7 @@ class Contact:
 
 @dataclass
 class PhoneBook:
-    contacts: List[Contact] = field(default_factory=list)
+    contacts: list[Contact] = field(default_factory=list)
 
     def add(self, last_name: str, first_name: str, phone: str, birth_date: str) -> None:
         from exceptions import InvalidPhoneError
@@ -34,8 +33,8 @@ class PhoneBook:
 
         self.contacts.sort(key=lambda contact: contact.phone[:3])
 
-    def select(self, last_name: str) -> List[Contact]:
-        result: List[Contact] = [
+    def select(self, last_name: str) -> list[Contact]:
+        result: list[Contact] = [
             contact
             for contact in self.contacts
             if contact.last_name.lower() == last_name.lower()
@@ -46,7 +45,7 @@ class PhoneBook:
         if not self.contacts:
             return "Телефонный справочник пуст"
 
-        table: List[str] = []
+        table: list[str] = []
         line: str = "+{}-+-{}-+-{}-+-{}-+-{}-+".format(
             "-" * 4, "-" * 20, "-" * 15, "-" * 15, "-" * 12
         )

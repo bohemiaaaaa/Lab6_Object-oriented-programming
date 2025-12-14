@@ -8,7 +8,7 @@ try:
     tmp = 10 / val
     print(tmp)
 except Exception as e:
-    print("Error! " + str(e))
+    print(f"Error! {e}")
 print("stop")
 
 # Обработка конкретных исключений
@@ -18,11 +18,11 @@ try:
     tmp = 10 / val
     print(tmp)
 except ValueError as ve:
-    print("ValueError! {0}".format(ve))
+    print(f"ValueError! {ve}")
 except ZeroDivisionError as zde:
-    print("ZeroDivisionError! {0}".format(zde))
+    print(f"ZeroDivisionError! {zde}")
 except Exception as ex:
-    print("Error! {0}".format(ex))
+    print(f"Error! {ex}")
 print("stop")
 
 # Блок finally
@@ -30,7 +30,7 @@ try:
     val = int(input("input number: "))
     tmp = 10 / val
     print(tmp)
-except Exception:  # Исправлено: было bare 'except'
+except Exception:
     print("Exception")
 finally:
     print("Finally code")
